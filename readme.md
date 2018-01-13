@@ -1,11 +1,11 @@
 # git-dir-up
 
-[![Package Version](https://img.shields.io/npm/v/git-dir-up.svg)](https://www.npmjs.com/package/git-dir-up)
-[![Build Status: Linux](https://img.shields.io/travis/luftywiranda13/git-dir-up/master.svg)](https://travis-ci.org/luftywiranda13/git-dir-up)
-[![Coverage Status](https://img.shields.io/codecov/c/github/luftywiranda13/git-dir-up/master.svg)](https://codecov.io/gh/luftywiranda13/git-dir-up)
-[![Downloads Status](https://img.shields.io/npm/dm/git-dir-up.svg)](https://npm-stat.com/charts.html?package=git-dir-up&from=2016-04-01)
+> Find the closest `.git` directory
 
-Find the closest `.git` directory
+[![Package Version](https://img.shields.io/npm/v/git-dir-up.svg?style=flat-square)](https://www.npmjs.com/package/git-dir-up)
+[![Downloads Status](https://img.shields.io/npm/dm/git-dir-up.svg?style=flat-square)](https://npm-stat.com/charts.html?package=git-dir-up&from=2016-04-01)
+[![Build Status: Linux](https://img.shields.io/travis/luftywiranda13/git-dir-up/master.svg?style=flat-square)](https://travis-ci.org/luftywiranda13/git-dir-up)
+[![Coverage Status](https://img.shields.io/codecov/c/github/luftywiranda13/git-dir-up/master.svg?style=flat-square)](https://codecov.io/gh/luftywiranda13/git-dir-up)
 
 Useful for tools that need to know whether `git` is managing the things inside.
 
@@ -32,8 +32,8 @@ npm install --save git-dir-up
 // example.js
 const gitDirUp = require('git-dir-up');
 
-gitDirUp(__dirname).then(path => {
-  console.log(path);
+gitDirUp(__dirname).then(filepath => {
+  console.log(filepath);
   //=> '/Users/luftywiranda/foo/.git'
 });
 ```
@@ -42,7 +42,7 @@ gitDirUp(__dirname).then(path => {
 
 ### gitDirUp([cwd])
 
-Returns `Promise<string>` for the path of `.git` or `null` if no `.git` dir found.
+Returns a `Promise` for either the filepath or `null` if it couldn't be found.
 
 #### cwd
 
@@ -53,8 +53,8 @@ Directory to start from.
 
 ## Related
 
-* [git-root-dir](https://github.com/luftywiranda13/git-root-dir) – Find the root path of a git project
-* [pkg-dir](https://github.com/sindresorhus/pkg-dir) – Find the root directory of a Node.js project or npm package
+* [git-root-dir](https://github.com/luftywiranda13/git-root-dir) – Find the root directory of a `git` repository
+* [pkg-up](https://github.com/sindresorhus/pkg-up) – Find the closest `package.json` file
 
 ## License
 
